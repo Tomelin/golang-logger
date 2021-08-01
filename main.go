@@ -2,6 +2,7 @@ package golanglogger
 
 import (
 	"log"
+	"os"
 	"time"
 )
 
@@ -23,7 +24,7 @@ func Cache() {
 
 // Loga as URI chamadas
 func Logger() {
-	log.Println("Logger", loggerTime)
+	log.Println("Logger", os.Getenv(APIREGISTER) os.Getenv(API_TYPE) loggerTime)
 	return
 }
 
