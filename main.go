@@ -24,7 +24,7 @@ func Cache() {
 
 // Loga as URI chamadas
 func Logger() {
-	log.Println("Logger", os.Getenv(APIREGISTER) os.Getenv(API_TYPE) loggerTime)
+	log.Println("Logger", os.Getenv(APIREGISTER), os.Getenv(API_TYPE), loggerTime)
 	return
 }
 
