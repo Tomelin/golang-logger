@@ -1,7 +1,13 @@
 package golanglogger
 
 import (
+	"errors"
+	"fmt"
 	"log"
+	"os"
+	"path/filepath"
+	"runtime"
+	"strings"
 	"time"
 )
 
@@ -33,3 +39,26 @@ func Logger() {
 // } else {
 // 	r.HandleFunc(rota.URI, middlewares.Logger(rota.Funcao)).Methods(rota.Metodo)
 // }
+func File() {
+	_, fpath, _, ok := runtime.Caller(0)
+	if !ok {
+		err := errors.New("failed to get filename")
+		panic(err)
+	}
+	filename := filepath.Base(fpath)
+
+	pwd, err := os.Getwd()
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	pathFile := pwd
+	ss := strings.Split(pathFile, "/")
+	pathFolder := ss[len(ss)-1]
+
+	fmt.Println("Folder =>", pathFolder)
+
+	fmt.Println("File => ", filename)
+
+	return
+}
