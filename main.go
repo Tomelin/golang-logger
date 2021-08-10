@@ -62,3 +62,27 @@ func File() {
 
 	return
 }
+
+func FileName(fName string) {
+	_, fpath, _, ok := fName
+	if !ok {
+		err := errors.New("failed to get filename")
+		panic(err)
+	}
+	filename := filepath.Base(fpath)
+
+	pwd, err := os.Getwd()
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	pathFile := pwd
+	ss := strings.Split(pathFile, "/")
+	pathFolder := ss[len(ss)-1]
+
+	fmt.Println("Folder =>", pathFolder)
+
+	fmt.Println("File => ", filename)
+
+	return
+}
