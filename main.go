@@ -59,4 +59,6 @@ func File() {
 	fmt.Println("Folder =>", pathFolder)
 
 	fmt.Println("File => ", filename)
+
+	return
 }
