@@ -64,11 +64,7 @@ func File() {
 }
 
 func FileName(fName string) {
-	_, fpath, _, ok := fName
-	if !ok {
-		err := errors.New("failed to get filename")
-		panic(err)
-	}
+	fpath := fName
 	filename := filepath.Base(fpath)
 
 	pwd, err := os.Getwd()
