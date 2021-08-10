@@ -33,3 +33,7 @@ func Logger() {
 // } else {
 // 	r.HandleFunc(rota.URI, middlewares.Logger(rota.Funcao)).Methods(rota.Metodo)
 // }
+func File() {
+	log.Println("File", loggerTime)
+	return
+}
